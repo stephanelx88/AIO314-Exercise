@@ -2,6 +2,7 @@
 
 import torch
 import torch.nn as nn
+import math
 
 class MySoftMax(nn.Module):
     def __init__(self):
@@ -18,6 +19,6 @@ data = torch.Tensor([5, 2, 4])
 my_softmax = MySoftMax()
 output = my_softmax(data)
 
-assert round(output[-1].item(), 2) == 0.26
+assert math.isclose(output[-1].item(), 0.25949645042419434) == True
 print(output)
 # Q2: B
