@@ -1,6 +1,7 @@
 # Question 4:
 import torch
 import torch.nn as nn
+import math
 
 
 class SoftMaxStable(nn.Module):
@@ -20,7 +21,8 @@ if __name__=='__main__':
     data = torch.Tensor([1, 2, 3])
     softmax_stable = SoftMaxStable()
     output = softmax_stable(data)
-    assert round(output[-1].item(), 2) == 0.67
+
+    assert math.isclose(output[-1].item(), 0.6652409434318542) == True
     print(output)
 
 
