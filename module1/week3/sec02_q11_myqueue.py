@@ -9,7 +9,10 @@ class MyQueue:
         return len(self.__queue) == self.__capacity
     
     def enqueue(self, value):
-        self.__queue.append(value)
+        if self.is_full():
+            print("Queue is full. Cannot enqueue.")
+        else:
+            self.__queue.append(value)
 
 if __name__ == '__main__':
 
