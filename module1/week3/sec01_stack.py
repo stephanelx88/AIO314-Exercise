@@ -12,9 +12,12 @@ class Stack:
         return len(self.__storage) == self.__capacity
 
     def pop(self):
-        value = self.__storage.pop()
-
-        return value
+        if self.is_empty():
+            print("Stack is empty. Could not pop")
+            return None
+        else:
+            value = self.__storage.pop()
+            return value
        
     def push(self, element):
         if len(self.__storage) <= self.__capacity:
