@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 from PIL import Image
-import streamlit as st #type: ignore
+import streamlit as st
 
 
 MODEL = os.path.join(os.path.dirname(__file__), "model", "MobileNetSSD_deploy.caffemodel")
